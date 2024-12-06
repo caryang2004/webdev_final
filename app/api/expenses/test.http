@@ -1,0 +1,54 @@
+
+//use to testing the endpoint
+GET http://localhost:3000/api/expenses?year=2024&month=10
+
+
+
+GET http://localhost:3000/api/expenses
+
+
+
+
+###
+
+POST http://localhost:3000/api/expenses HTTP/1.1
+Content-Type: application/json
+
+{
+    "year": 2024,
+    "month": 12,
+    "day": 1,
+    "name": "Enmax bill",
+    "category": "Utilities",
+    "amount": 300.0,
+    "quantity": 1
+
+}
+
+###
+
+GET http://localhost:3000/week-13/api/dogs/1
+
+###
+
+PUT http://localhost:3000/week-13/api/dogs/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Buddy",
+    "age": 4
+}
+
+###
+
+PATCH http://localhost:3000/week-13/api/dogs/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "age": 10
+}
+
+###
+
+DELETE http://localhost:3000/week-13/api/dogs/7 HTTP/1.1
+
