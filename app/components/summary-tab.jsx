@@ -65,8 +65,8 @@ export function SummaryTab() {
           url += `&month=${month}`;
         }
       }
-      console.log("1. URL =",url);
-      console.log("1.1 NEXT_PUBLIC_DATABASE_URL", process.env.NEXT_PUBLIC_DATABASE_URL);
+      // console.log("1. URL =",url);
+      // console.log("1.1 NEXT_PUBLIC_DATABASE_URL", process.env.NEXT_PUBLIC_DATABASE_URL);
       // console.log('3.1. NEXT_PUBLIC_DATABASE_URL:', process.env.NEXT_PUBLIC_DATABASE_URL);
       // console.log('3.2. DATABASE_URL:', process.env.DATABASE_URL);      
 

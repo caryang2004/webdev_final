@@ -1,6 +1,8 @@
 import { z } from "zod";
 import { neon } from "@neondatabase/serverless";
 
+const DB_URL = "postgresql://neondb_owner:EPLOU3JfAn6b@ep-restless-math-a6qja71p.us-west-2.aws.neon.tech/neondb?sslmode=require";
+
 // GET: Retrieve all expenses
 // export async function GET() {
 //   const dbUrl = process.env.DATABASE_URL || "";
@@ -22,7 +24,7 @@ export async function GET(request) {
   // let year = 2024;
   // let month = 10;
 
-  const dbUrl = process.env.NEXT_PUBLIC_DATABASE_URL || "";
+  const dbUrl = DB_URL || "";
   const sql = neon(dbUrl);
   
 
@@ -94,7 +96,7 @@ export async function POST(request) {
   }
 
   // Add the new expense to the database
-  const dbUrl = process.env.DATABASE_URL || "";
+  const dbUrl = DB_URL || "";
   const sql = neon(dbUrl);
 
   try {
@@ -137,7 +139,7 @@ export async function PUT(request) {
   }
 
   // Update the expense in the database
-  const dbUrl = process.env.DATABASE_URL || "";
+  const dbUrl = DB_URL || "";
   const sql = neon(dbUrl);
 
   try {
@@ -169,7 +171,7 @@ export async function DELETE(request) {
     return new Response(JSON.stringify({ error: "Missing expense ID" }), { status: 400 });
   }
 
-  const dbUrl = process.env.DATABASE_URL || "";
+  const dbUrl = DB_URL || "";
   const sql = neon(dbUrl);
 
   try {
