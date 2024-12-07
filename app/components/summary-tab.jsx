@@ -66,13 +66,19 @@ export function SummaryTab() {
         }
       }
       console.log("1. URL =",url);
-      console.log('1.1. NEXT_PUBLIC_API_URL:', process.env.NEXT_PUBLIC_API_URL);
+      
 
       const response = await fetch(url);
       if (!response.ok) throw new Error('Failed to fetch expenses');
       const expenses = await response.json();
       console.log("3. expenses =",{expenses});
-      console.log(expenses);
+      
+      console.log('3.1. NEXT_PUBLIC_DATABASE_URL:', process.env.NEXT_PUBLIC_DATABASE_URL);
+      console.log('3.2. DATABASE_URL:', process.env.DATABASE_URL);
+      
+      // console.log('3.2. dbUrl:', dbUrl);
+
+      // console.log(expenses);
       // Initialize summary with zero values
       const initialSummary = categories.map((category) => ({
         category,

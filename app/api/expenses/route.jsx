@@ -23,8 +23,10 @@ export async function GET(request) {
   // let month = 10;
   console.log("2. route", { year, month });
 
-  const dbUrl = process.env.DATABASE_URL || "";
+  const dbUrl = process.env.NEXT_PUBLIC_DATABASE_URL || "";
+  console.log('2.1. DATABASE_URL:', process.env);
   const sql = neon(dbUrl);
+  
 
   try {
     // Construct SQL query with optional filtering
@@ -94,7 +96,7 @@ export async function POST(request) {
   }
 
   // Add the new expense to the database
-  const dbUrl = process.env.DATABASE_URL || "";
+  const dbUrl = process.env.NEXT_PUBLIC_DATABASE_URL || "";
   const sql = neon(dbUrl);
 
   try {
@@ -137,7 +139,7 @@ export async function PUT(request) {
   }
 
   // Update the expense in the database
-  const dbUrl = process.env.DATABASE_URL || "";
+  const dbUrl = process.env.NEXT_PUBLIC_DATABASE_URL || "";
   const sql = neon(dbUrl);
 
   try {
@@ -169,7 +171,7 @@ export async function DELETE(request) {
     return new Response(JSON.stringify({ error: "Missing expense ID" }), { status: 400 });
   }
 
-  const dbUrl = process.env.DATABASE_URL || "";
+  const dbUrl = process.env.NEXT_PUBLIC_DATABASE_URL || "";
   const sql = neon(dbUrl);
 
   try {
