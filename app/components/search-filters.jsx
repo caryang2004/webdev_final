@@ -13,8 +13,6 @@ export function SearchFilters({ onSearch }) {
   const [year, setYear] = React.useState(new Date().getFullYear().toString())
   const [month, setMonth] = React.useState('all')
 
-  
-
   const months = [
     'All Months',
     'January',

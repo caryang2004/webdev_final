@@ -65,16 +65,17 @@ export function SummaryTab() {
           url += `&month=${month}`;
         }
       }
-      console.log("1. URL =",url);
-      
+      // console.log("1. URL =",url);
+      // console.log("1.1 DB_URL", process.env.NEXT_PUBLIC_DATABASE_URL);
+      // console.log('3.1. NEXT_PUBLIC_DATABASE_URL:', process.env.NEXT_PUBLIC_DATABASE_URL);
+      // console.log('3.2. DATABASE_URL:', process.env.DATABASE_URL);      
 
       const response = await fetch(url);
       if (!response.ok) throw new Error('Failed to fetch expenses');
       const expenses = await response.json();
-      console.log("3. expenses =",{expenses});
+      // console.log("3. expenses =",{expenses});
       
-      console.log('3.1. NEXT_PUBLIC_DATABASE_URL:', process.env.NEXT_PUBLIC_DATABASE_URL);
-      console.log('3.2. DATABASE_URL:', process.env.DATABASE_URL);
+
       
       // console.log('3.2. dbUrl:', dbUrl);
 
@@ -104,7 +105,7 @@ export function SummaryTab() {
           total: isNaN(item.total) ? 0 : item.total, // Default invalid values to 0
         }))
       );
-      console.log("4. summaryData", summaryData);
+      // console.log("4. summaryData", summaryData);
 
     } catch (error) {
       console.error('Error fetching summary data:', error);
