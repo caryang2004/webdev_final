@@ -54,7 +54,7 @@ export function SummaryTab() {
   
   const fetchSummaryData = async (year, month) => {
     try {
-      let url = 'http://localhost:3000/api/expenses';
+      let url = process.env.NEXT_PUBLIC_API_URL;
 
       // let year = 2024;
       // let month = 10;
