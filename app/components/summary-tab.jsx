@@ -54,7 +54,8 @@ export function SummaryTab() {
   
   const fetchSummaryData = async (year, month) => {
     try {
-      let url = process.env.NEXT_PUBLIC_API_URL;
+      // let url = process.env.NEXT_PUBLIC_API_URL;
+      let url = '/api/expenses';
 
       // let year = 2024;
       // let month = 10;
@@ -65,6 +66,8 @@ export function SummaryTab() {
         }
       }
       console.log("1. URL =",url);
+      console.log('1.1. NEXT_PUBLIC_API_URL:', process.env.NEXT_PUBLIC_API_URL);
+
       const response = await fetch(url);
       if (!response.ok) throw new Error('Failed to fetch expenses');
       const expenses = await response.json();
